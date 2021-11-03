@@ -1,4 +1,4 @@
-var library = {
+const library = {
        tracks: { t01: { id: "t01",
                         name: "Code Monitem",
                         artist: "Jonathan Coulton",
@@ -23,7 +23,7 @@ var library = {
                   }
      }
      
-     var printPlaylists = function () {
+     printPlaylists = function () {
          for (item in library.playlists) {
            let playlistFigure = item;
            let name = library.playlists[item].name;
@@ -32,7 +32,7 @@ var library = {
          }  
      };
    
-     var printTracks = function () {
+     printTracks = function () {
        for (item in library.tracks) {
            let trackNumber = item;
            let artist = library.tracks[item].artist;
@@ -42,7 +42,7 @@ var library = {
        }
      };
 
-     var printPlaylist = function (identityPlaylist) {
+     printPlaylist = function (identityPlaylist) {
        let playlistName = library.playlists[identityPlaylist].name;
        let unitTracks = library.playlists[identityPlaylist].tracks.length;
        console.log(`${identityPlaylist}: ${playlistName} - ${unitTracks} tracks`);
@@ -54,16 +54,16 @@ var library = {
        }
      };
   
-     var addTrackToPlaylist = function (identTrack, identityPlaylist) {
+     addTrackToPlaylist = function (identTrack, identityPlaylist) {
        library.playlists[identityPlaylist].tracks.push(identTrack);
        console.log(`${identTrack} was added to playlist ${identityPlaylist}`);
      }
  
-     var item = function() {
+     item = function() {
        return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
      }
 
-     var addTrack = function (name, artist, album) {
+     addTrack = function (name, artist, album) {
      
        let uniqueID = item();
        library.tracks[uniqueID] = {
@@ -77,7 +77,7 @@ var library = {
    
      addTrack("Lowrider", "War", "Why Cant We Be Friends");
 
-     var addPlaylist = function (name) {
+     addPlaylist = function (name) {
    
        let uniqueID = item();
        library.playlists[uniqueID] = {
@@ -87,7 +87,7 @@ var library = {
        }
      }
      
-     var printSearchResults = function(query) {
+     printSearchResults = function(query) {
      
        qstr = new RegExp(q, 'i')
   console.log(qstr)
